@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: shiftswap-be
+
+  graphql:
+    graphiql:
+      enabled: true
+    schema:
+      printer:
+        enabled: true
+
+server:
+  port: 8080
+
+application:
+  version: ${project.version:0.0.1-SNAPSHOT}
