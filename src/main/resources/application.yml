@@ -3,8 +3,10 @@ spring:
     name: shiftswap-be
 
   graphql:
+    path: /graphql
     graphiql:
       enabled: true
+      path: /graphiql
     schema:
       printer:
         enabled: true
