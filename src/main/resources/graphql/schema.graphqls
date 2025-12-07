@@ -1,9 +1,8 @@
 type Query {
-    health: HealthStatus!
+    profile: UserProfile
 }
 
-type HealthStatus {
-    status: String!
-    version: String!
-    timestamp: String!
+type UserProfile {
+    name: String!
+    role: String!
 }
