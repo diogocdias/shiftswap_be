@@ -11,8 +11,29 @@ spring:
       printer:
         enabled: true
 
+  datasource:
+    url: ${{ Postgres.DATABASE_URL }:jdbc:postgresql://localhost:5432/mydatabase}
+    username: ${DB_USERNAME:myuser}
+    password: ${DB_PASSWORD:mypassword}
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: none
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+
+  liquibase:
+    change-log: classpath:db/changelog/db.changelog-master.yaml
+    enabled: true
+
 server:
   port: 8080
 
 application:
   version: ${project.version:0.0.1-SNAPSHOT}
+
+

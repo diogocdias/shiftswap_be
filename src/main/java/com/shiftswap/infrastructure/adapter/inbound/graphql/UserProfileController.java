@@ -2,6 +2,7 @@ package com.shiftswap.infrastructure.adapter.inbound.graphql;
 
 import com.shiftswap.domain.port.inbound.GetUserProfileUseCase;
 import com.shiftswap.infrastructure.adapter.inbound.graphql.model.UserProfileDTO;
+import org.springframework.graphql.data.method.annotation.Argument;
 import org.springframework.graphql.data.method.annotation.QueryMapping;
 import org.springframework.stereotype.Controller;
 
@@ -15,7 +16,7 @@ public class UserProfileController {
     }
 
     @QueryMapping
-    public UserProfileDTO profile() {
-        return getUserProfileUseCase.getUserProfile();
+    public UserProfileDTO profile(@Argument String username) {
+        return getUserProfileUseCase.getUserProfile(username);
     }
 }

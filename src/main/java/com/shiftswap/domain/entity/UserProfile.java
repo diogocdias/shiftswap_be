@@ -1,10 +1,9 @@
 package com.shiftswap.domain.entity;
 
-
-//import jakarta.persistence.Column;
-//import jakarta.persistence.Entity;
-//import jakarta.persistence.Id;
-//import jakarta.persistence.Table;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -13,8 +12,8 @@ import lombok.Setter;
 
 import java.util.UUID;
 
-//@Entity
-//@Table(name = "user_profile")
+@Entity
+@Table(name = "user_profile")
 @Getter
 @Setter
 @NoArgsConstructor
@@ -22,14 +21,14 @@ import java.util.UUID;
 @Builder
 public class UserProfile {
 
-    //@Id
-    //@Column(name = "id", updatable = false, nullable = false, columnDefinition = "uuid")
+    @Id
+    @Column(name = "id", updatable = false, nullable = false, columnDefinition = "uuid")
     private UUID id;
 
-    //@Column(name = "name", nullable = false)
+    @Column(name = "name", nullable = false)
     private String name;
 
-    //@Column(name = "role", nullable = false)
+    @Column(name = "role", nullable = false)
     private String role;
 }
 
