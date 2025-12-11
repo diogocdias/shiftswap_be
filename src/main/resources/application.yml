@@ -12,7 +12,7 @@ spring:
         enabled: true
 
   datasource:
-    url: ${DATABASE_URL:jdbc:postgresql://localhost:5432/mydatabase}
+    url: ${DATABASE_URL:jdbc:postgresql://postgres:16033/railway}
     username: ${DB_USERNAME:myuser}
     password: ${DB_PASSWORD:mypassword}
     driver-class-name: org.postgresql.Driver
