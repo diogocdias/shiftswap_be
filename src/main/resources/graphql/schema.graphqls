@@ -1,8 +1,0 @@
-type Query {
-    profile (username: String!): UserProfile
-}
-
-type UserProfile {
-    name: String!
-    role: String!
-}
