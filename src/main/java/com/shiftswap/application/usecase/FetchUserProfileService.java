@@ -3,7 +3,7 @@ package com.shiftswap.application.usecase;
 import com.shiftswap.application.mapper.UserProfileMapper;
 import com.shiftswap.domain.port.inbound.GetUserProfileUseCase;
 import com.shiftswap.domain.port.outbound.UserRepositoryPort;
-import com.shiftswap.infrastructure.adapter.inbound.graphql.model.UserProfileDTO;
+import com.shiftswap.infrastructure.adapter.inbound.rest.dto.UserProfileResponseDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -19,7 +19,7 @@ public class FetchUserProfileService implements GetUserProfileUseCase {
     }
 
     @Override
-    public UserProfileDTO getUserProfile(String username) {
+    public UserProfileResponseDTO getUserProfile(String username) {
         return userProfileMapper.toDTO(userRepositoryPort.fetchUserProfile(username));
     }
 }

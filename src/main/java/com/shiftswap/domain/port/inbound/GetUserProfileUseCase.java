@@ -1,8 +1,8 @@
 package com.shiftswap.domain.port.inbound;
 
 
-import com.shiftswap.infrastructure.adapter.inbound.graphql.model.UserProfileDTO;
+import com.shiftswap.infrastructure.adapter.inbound.rest.dto.UserProfileResponseDTO;
 
 public interface GetUserProfileUseCase {
-    UserProfileDTO getUserProfile(String username);
+    UserProfileResponseDTO getUserProfile(String username);
 }

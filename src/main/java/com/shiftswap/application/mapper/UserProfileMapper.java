@@ -1,24 +1,21 @@
 package com.shiftswap.application.mapper;
 
 import com.shiftswap.domain.entity.UserProfile;
-import com.shiftswap.infrastructure.adapter.inbound.graphql.model.UserProfileDTO;
+import com.shiftswap.infrastructure.adapter.inbound.rest.dto.UserProfileResponseDTO;
 import org.springframework.stereotype.Component;
 
 @Component
-public class UserProfileMapper implements Mapper<UserProfile, UserProfileDTO> {
+public class UserProfileMapper implements Mapper<UserProfile, UserProfileResponseDTO> {
     @Override
-    public UserProfileDTO toDTO(UserProfile userProfile) {
-        return UserProfileDTO.builder()
+    public UserProfileResponseDTO toDTO(UserProfile userProfile) {
+        return UserProfileResponseDTO.builder()
                 .name(userProfile.getName())
                 .role(userProfile.getRole())
                 .build();
     }
 
     @Override
-    public UserProfile toEntity(UserProfileDTO userProfileDTO) {
-        return UserProfile.builder()
-                .name(userProfileDTO.name())
-                .role(userProfileDTO.role())
-                .build();
+    public UserProfile toEntity(UserProfileResponseDTO userProfileDTO) {
+        throw new UnsupportedOperationException("Unsupported operation");
     }
 }
